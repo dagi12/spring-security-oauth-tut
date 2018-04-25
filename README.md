@@ -1,1 +1,14 @@
-eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1MjM1MTIxODMsInVzZXJfbmFtZSI6IkZMT1RBIiwianRpIjoiNWUxYjg2NzUtNWRmOS00MGMzLWExMGYtZjE5OGJiZmQxYmEwIiwiY2xpZW50X2lkIjoid3d3LXphbW93aWVuaWEiLCJzY29wZSI6WyJhbGwiXX0.oYXIhwvgZGTruuwiGci0ZVNjr6npSVK5-ounTqXkXKQm5Qvb6nPlDMfgryoRtPqvv_-1usSpL7awaQ124snP3jgZIr8Hq9EmmdZIctDeO9wj5u8Jx7z9tHCOC48N9q6hiNFloUjdls5-1LD1Wut-9T5NORN9AUr2ntECQ_QqCQido_ch34WiEw22pYobaV9qjK0SSgOp43bxaFjyckt2MYf3JKaE8NWtaHA0THjRLKBaCjatAnaGZjB6TMQWLrmedUn0jyrvWAMGZgXjl8UiYjrUALJ8ykcGaabCw0PjRWoJFtprEvZ-BdfFWqym8N-gTwy43cPn_AcpVVe2pTTJtg
+## Spring security oauth tut
+
+### Request
+POST 
+Authorization: Basic cmVudGFsY2Fyczp7bm9vcH1yZW50YWxjYXJz
+Content-Type: application/x-www-form-urlencoded
+```
+grant_type password
+username rentalcars
+password rentalcars
+```
+### Docs
+- Tu masz jak zrobić request jsonem stackoverflow.com/questions/38165131
+- Tu masz jak zmienić standardowy url stackoverflow.com/questions/30774206
