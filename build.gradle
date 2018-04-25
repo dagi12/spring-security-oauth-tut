@@ -1,0 +1,57 @@
+group 'pl.edu.amu.wmi.oauthtut'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext {
+        // always check logs are rolling and http json output error handling on update
+        springBootVersion = '1.5.11.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+springBoot {
+//    mainClassName = "pl.edu.amu.wmi.oauthtut.Application"
+    mainClass = "pl.edu.amu.wmi.oauthtut.Application"
+}
+
+ext {
+    mssqlVersion = "6.4.0.jre8"
+    flywayVersion = "4.2.0"
+    production = System.getProperty('env') == 'prod'
+    profiles = System.getProperty('profiles')
+}
+
+ext['flyway.version'] = flywayVersion
+ext['mssql-jdbc.version'] = mssqlVersion
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "com.microsoft.sqlserver:mssql-jdbc:$mssqlVersion"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+    compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+//    compile "org.springframework.security.oauth.boot:spring-security-oauth2-autoconfigure:$springBootVersion"
+    compile "org.springframework.security.oauth:spring-security-oauth2:2.3.0.RELEASE"
+    compile "org.springframework.security:spring-security-jwt:1.0.9.RELEASE"
+    testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+}
+
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+}
